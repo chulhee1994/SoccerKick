@@ -1,0 +1,45 @@
+
+#container{
+  width:90%;
+  margin:auto;
+  padding-top: 5%;
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+}
+
+table.normal{
+    border:2px solid silver;
+}
+
+thead{
+  background:skyblue;
+  color:black;
+}
+
+th,td{
+  text-align:center;
+  padding:5px 0;
+}
+
+tbody tr:nth-child(even){
+  background:#ECF0F1;
+}
+
+tbody tr:hover{
+background:#BDC3C7;
+  color:#FFFFFF;
+}
+
+.fixed{
+  top:0;
+  position:fixed;
+  width:auto;
+ display:none;
+}
+
+.end{
+  margin-top:800px;
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#login_text{
+	padding-top : 10%;
+}
+
+#login_form{
+	width: 50%;
+	padding-top :5%;
+	margin-left: 25%;
+}
+#login_button{
+	width: 10%;
+}
+#login_button_text{
+	text-align: center;
+}
+#login_button{
+	margin-top:5%;
+	margin-left: 45%;
+}

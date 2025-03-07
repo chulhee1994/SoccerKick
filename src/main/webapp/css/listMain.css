@@ -1,0 +1,13 @@
+@charset "UTF-8";
+#addButton{
+	float:right;
+	width: 30%;
+	display: inline-block;
+}
+
+.row {
+    min-height: 100%;
+    padding-top: 5rem;
+    padding-left: 1rem;
+    width: 80rem;
+}  

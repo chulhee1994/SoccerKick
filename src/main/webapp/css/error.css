@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+#error_div{
+	padding-top: 20%;
+}
+
+.wrap{
+	width : 100%;
+	padding-top: 10%;
+	padding-right: 20%;
+}

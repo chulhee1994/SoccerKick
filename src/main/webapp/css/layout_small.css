@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/archivoblack/v21/HTxqL289NzCGg4MzN6KJ7eW6CYyF-w.ttf) format('truetype');
+}
+*{
+ font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body,html{
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+}
+.container{
+	box-sizing : border-box;
+	min-width:1340px;
+	position: relative;
+	height : 100%;
+}
+header{
+	width:1280px;
+	margin: 0 auto;
+	border-bottom: 1px solid silver;
+}
+section{
+	position: relative;
+	width:1280px;
+	padding-bottom: 5%;
+	margin: 0 auto;
+	height: 80%;
+}
+footer{
+	width:1280px;
+	border-top: 1px solid silver;
+	margin: 0 auto;
+}
