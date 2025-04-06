@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  ÆÄÀÏÀÌ »ý¼ºµÊ - ¼ö¿äÀÏ-12¿ù-04-2024   
+--  íŒŒì¼ì´ ìƒì„±ë¨ - ìˆ˜ìš”ì¼-12ì›”-04-2024   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table SOCCER
@@ -22,10 +22,10 @@
   TABLESPACE "SYSTEM" ;
 REM INSERTING into SYSTEM.SOCCER
 SET DEFINE OFF;
-Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (1,'Ã¿½Ã À¯´ÏÆû',35000,'³ªÀÌÅ°','Ã¿½Ã FC ¾î¼¾Æ½ 2024-25 ¾î¿þÀÌ À¯´ÏÆû by ³ªÀÌÅ°','½ÅÇ°','À¯´ÏÆû',50,'soccer0.jpg',null);
-Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (2,'¸ÇÃ¼½ºÅÍ½ÃÆ¼ À¯´ÏÆû11',40000,'Çª¸¶',null,'½ÅÇ°','À¯´ÏÆû',40,'soccer1.jpg',null);
-Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (3,'¸®¹öÇ® À¯´ÏÆû',60000,'³ªÀÌÅ°','¸®¹öÇ® FC ¾î¼¾Æ½ 2024-25 È¨ À¯´ÏÆû by ³ªÀÌÅ°','½ÅÇ°','À¯´ÏÆû',32,'soccer2.jpg',null);
-Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (4,'¹ÙÀÌ¿¡¸¥ ¹ÀÇî À¯´ÏÆû',140000,'¾Æµð´Ù½º','FC ¹ÙÀÌ¿¡¸¥ ¹ÀÇî ¾î¼¾Æ½ 2023-24 È¨ À¯´ÏÆû by ¾Æµð´Ù½º(±è¹ÎÀç Âø¿ë)','Áß°í','À¯´ÏÆû',1,'soccer3.jpg',null);
+Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (1,'ì²¼ì‹œ ìœ ë‹ˆí¼',35000,'ë‚˜ì´í‚¤','ì²¼ì‹œ FC ì–´ì„¼í‹± 2024-25 ì–´ì›¨ì´ ìœ ë‹ˆí¼ by ë‚˜ì´í‚¤','ì‹ í’ˆ','ìœ ë‹ˆí¼',50,'soccer0.jpg',null);
+Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (2,'ë§¨ì²´ìŠ¤í„°ì‹œí‹° ìœ ë‹ˆí¼11',40000,'í‘¸ë§ˆ',null,'ì‹ í’ˆ','ìœ ë‹ˆí¼',40,'soccer1.jpg',null);
+Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (3,'ë¦¬ë²„í’€ ìœ ë‹ˆí¼',60000,'ë‚˜ì´í‚¤','ë¦¬ë²„í’€ FC ì–´ì„¼í‹± 2024-25 í™ˆ ìœ ë‹ˆí¼ by ë‚˜ì´í‚¤','ì‹ í’ˆ','ìœ ë‹ˆí¼',32,'soccer2.jpg',null);
+Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG,QUANTITY) values (4,'ë°”ì´ì—ë¥¸ ë®Œí—¨ ìœ ë‹ˆí¼',140000,'ì•„ë””ë‹¤ìŠ¤','FC ë°”ì´ì—ë¥¸ ë®Œí—¨ ì–´ì„¼í‹± 2023-24 í™ˆ ìœ ë‹ˆí¼ by ì•„ë””ë‹¤ìŠ¤(ê¹€ë¯¼ìž¬ ì°©ìš©)','ì¤‘ê³ ','ìœ ë‹ˆí¼',1,'soccer3.jpg',null);
 --------------------------------------------------------
 --  DDL for Index SYS_C007152
 --------------------------------------------------------
@@ -44,3 +44,5 @@ Insert into SYSTEM.SOCCER (NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGO
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "SYSTEM"  ENABLE;
+
+  CREATE SEQUENCE  "SYSTEM"."SOCCER_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE ;
