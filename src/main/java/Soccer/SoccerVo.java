@@ -75,6 +75,12 @@ public class SoccerVo implements Serializable{
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	@Override
+	public String toString() {
+		return "SoccerVo [num=" + num + ", name=" + name + ", price=" + price + ", publisher=" + publisher
+				+ ", information=" + information + ", condition=" + condition + ", category=" + category
+				+ ", inventory=" + inventory + ", img=" + img + ", quantity=" + quantity + "]";
+	}
 	
 
 	

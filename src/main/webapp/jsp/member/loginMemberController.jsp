@@ -38,14 +38,15 @@
 	if(rs.next()){
 		HttpSession idSession = request.getSession();
 		String StrSession = idSession.toString();
-		session.setAttribute("sessionId", StrSession);
+		session.setAttribute("sessionId", id);
+/* 		session.setAttribute("sessionId", StrSession); */
 		
 		//회원 아이디 비밀번호 맵에담아 세션에 저장
 		Map<String, String> userMap = new HashMap<String,String>();
 		userMap.put("id", id);
 		userMap.put("pwd", pwd);
 		session.setAttribute("user", userMap);
-		dis = request.getRequestDispatcher("http://localhost:8090/Soccerkick/jsp/welcome.jsp");
+		dis = request.getRequestDispatcher("/jsp/welcome.jsp");
 		dis.forward(request, response);
 	}else{
 		request.setAttribute("check", "<script>alert('회원정보가 없습니다.');</script>");

@@ -17,7 +17,7 @@
 		request.setCharacterEncoding("UTF-8");
 	
 		String fileName="";
-		String path ="C:\\Temp";
+		String path ="C:\\Temp\\img";
 		String encType ="UTF-8";
 		int MaxSize = 5 * 1024 * 1024;
 		MultipartRequest multi = new MultipartRequest(request,path,MaxSize,encType,new DefaultFileRenamePolicy());
@@ -87,7 +87,16 @@
 		if(conn!=null)
 			conn.close();
 		response.sendRedirect("listMain_edit.jsp?edit=edit");
+	
+		
+		
+		
+		
+		
+		
+		
 		
 	%>
+	
 </body>
 </html>

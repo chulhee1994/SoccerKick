@@ -4,21 +4,55 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 정보 수정 컨트롤러</title>
 </head>
 <body>
-	<%@include file="/jsp/connection/connection.jsp" %>
+	<%@include file="/jsp/connection/connection.jsp"%>
 	<%
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+	
+	String id= request.getParameter("id");
+	
+	
+	
+	
+	request.setCharacterEncoding("utf-8");
+	String mid = request.getParameter("id");
+	String mpw = request.getParameter("pwd2");
+	String mname = request.getParameter("name");
+	String mgender = request.getParameter("gender");
+	String mbirth = request.getParameter("birth");
+	String maddress = request.getParameter("address");
+	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	String sql="SELECT * FROM member WHERE id=?";
+	pstmt=conn.prepareStatement(sql);
+	pstmt.setString(1,mid);
+	rs=pstmt.executeQuery();
+	
+	System.out.println(mid);
+	if(rs.next()) {
 		
-		//비밀번호 1,2 비어있을 경우 1,2가 다를 경우 1,2가 같을경우 
-		
-		//이름이 비어있을경우 이름 변경
-		
-		//생일 선택 안될경우 선택 변경
-		
-		//
+			sql="UPDATE member SET pwd=?, name=? , birth=?,address=? WHERE id=?";
+			pstmt=conn.prepareStatement(sql);
+			
+			pstmt.setString(1,mpw);
+			pstmt.setString(2,mname);
+			pstmt.setString(3,mbirth);
+			pstmt.setString(4,maddress);
+			pstmt.setString(5,mid);
+			pstmt.executeUpdate();
+	
+	}
+	if (pstmt!=null)
+		pstmt.close();
+	if (conn!=null)
+		conn.close();
+	
+	RequestDispatcher dis = request.getRequestDispatcher("/jsp/listMain.jsp");
+	dis.forward(request, response);
+	
+	
+	
 	
 	%>
 </body>

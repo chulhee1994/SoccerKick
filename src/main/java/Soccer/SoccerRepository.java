@@ -86,6 +86,7 @@ public class SoccerRepository {
 				break;
 			}
 		}
+		System.out.println(vo.toString());
 		return vo;
 	}
 	

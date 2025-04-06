@@ -1,3 +1,4 @@
+<%@page import="jakarta.servlet.jsp.jstl.sql.Result"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="java.util.Enumeration"%>
@@ -15,44 +16,11 @@
   <%@include file="connection/connection.jsp"%>
 <!--DB없이 사용 -->
 
-<%-- 		<%	
-			//String path = "C:\\Temp";
-			String path = "C:\\workspace\\workspace_project\\SoccerKick\\src\\main\\webapp\\img";
-			MultipartRequest multi = new MultipartRequest(request, path,100*1024*1024, "UTF-8",new DefaultFileRenamePolicy());
-			request.setCharacterEncoding("UTF-8");
-			SoccerRepository dao = SoccerRepository.getInstance();
-			
-			int num = Integer.parseInt(multi.getParameter("num"));
-			String name = multi.getParameter("name");
-			int price = Integer.parseInt(multi.getParameter("price"));
-			String publisher = multi.getParameter("publisher");
-			String information = multi.getParameter("information");
-			String condition = multi.getParameter("condition");
-			String category = multi.getParameter("category");
-			int inventory = Integer.parseInt(multi.getParameter("inventory"));
-			String img = multi.getParameter("img");
-			
-			Enumeration elements =  multi.getFileNames();
-			String systemName = (String)elements.nextElement();
-			
-			String imgName = multi.getFilesystemName(systemName);
-			SoccerVo vo = new SoccerVo();
-			vo.setNum(num);
-			vo.setName(name);
-			vo.setPrice(price);
-			vo.setPublisher(publisher);
-			vo.setInformation(information);
-			vo.setCondition(condition);
-			vo.setCategory(category);
-			vo.setInventory(inventory);
-			vo.setImg(imgName);
-			
-			dao.addProduct(vo);
-			response.sendRedirect("listMain.jsp");				
-		%> --%>	
 <!--DB없이 사용 -->		
 		<%
+			String sql = null;
 			PreparedStatement pstmt = null;
+			Statement stmt = null;
 			String path = "C:\\Temp\\img";
 			MultipartRequest multi = new MultipartRequest(request, path,100*1024*1024, "UTF-8",new DefaultFileRenamePolicy());
 			
@@ -72,7 +40,7 @@
 			String imgName = multi.getFilesystemName(systemName);
 		
 			
-			String sql="INSERT INTO SOCCER(NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG) VALUES(?,?,?,?,?,?,?,?,?)";
+			sql="INSERT INTO SOCCER(NUM,NAME,PRICE,PUBLISHER,INFORMATION,CONDITION,CATEGORY,INVENTORY,IMG) VALUES(?,?,?,?,?,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, num);

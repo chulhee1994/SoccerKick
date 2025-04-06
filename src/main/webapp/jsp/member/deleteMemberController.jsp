@@ -14,7 +14,7 @@
 	<%
 	Map<String,String> userMap = (Map<String,String>)session.getAttribute("user");
 	
-	//세션에서 받아온 아이디랑 비밀번호 찾기	
+	//세션에서 받아온 아이디랑 비밀번호 찾기
 	String sessionId = userMap.get("id");
 	String sessionPwd = userMap.get("pwd");
 	
@@ -28,25 +28,24 @@
 	pstmt.setString(2, sessionPwd);
 	rs = pstmt.executeQuery();
 	
-	RequestDispatcher dis = request.getRequestDispatcher("/jsp/listMain.jsp");
 	if(rs.next()){
+		
 	sql = "DELETE FROM MEMBER WHERE ID=? AND PWD=?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, sessionId);
 	pstmt.setString(2, sessionPwd);
 	int rows = pstmt.executeUpdate();
-	
+		
 	if(rows !=0){
 		session.invalidate();
 		out.println("<script>alert('회원을 삭제했습니다.');</script>");
 		response.sendRedirect("../welcome.jsp");		
 		}else{
 	out.println("<script>alert('회원을 삭제하지 못했습니다.');</script>");
-	dis.forward(request, response);
 		}
+	
 	}else{
 	out.println("<script>alert('삭제할 수 없는 회원입니다.');</script>");
-	dis.forward(request, response);
 	}
 	
 	
